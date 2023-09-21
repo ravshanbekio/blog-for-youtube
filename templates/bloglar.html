@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcha Bloglar</title>
+</head>
+<body>
+    {% for blog in blogs %}
+        <a href="{% url 'blog-detail' blog.id %}">{{ blog.id }}.{{ blog.title }} <br><br></a>
+        {{ blog.body|truncatewords:10 }} <br>
+    {% endfor %}
+    
+</body>
+</html>
